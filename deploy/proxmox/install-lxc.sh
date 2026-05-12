@@ -71,7 +71,7 @@ ensure_debian_template() {
 
   if ! pveam list "${template_storage}" | awk '{print $2}' | grep -qx "${template_name}"; then
     echo "Downloading ${template_name} to ${template_storage}..." >&2
-    pveam download "${template_storage}" "${template_name}"
+    pveam download "${template_storage}" "${template_name}" >&2
   fi
 
   printf '%s' "${template_storage}:vztmpl/${template_name}"
