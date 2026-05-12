@@ -70,7 +70,7 @@ ensure_debian_template() {
   fi
 
   if ! pveam list "${template_storage}" | awk '{print $2}' | grep -qx "${template_name}"; then
-    echo "Downloading ${template_name} to ${template_storage}..."
+    echo "Downloading ${template_name} to ${template_storage}..." >&2
     pveam download "${template_storage}" "${template_name}"
   fi
 
