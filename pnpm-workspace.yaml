@@ -1,0 +1,5 @@
+minimumReleaseAge: 20160
+minimumReleaseAgeStrict: true
+onlyBuiltDependencies:
+  - better-sqlite3
+  - esbuild

@@ -1,0 +1,30 @@
+{
+  "name": "soil-data",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.19.0",
+  "description": "Garden soil moisture tracker for Ecowitt sensors",
+  "engines": {
+    "node": ">=20.19.0",
+    "pnpm": ">=10.19.0"
+  },
+  "scripts": {
+    "build": "vite build",
+    "dev:client": "vite",
+    "dev:server": "node --env-file=.env src/server.js",
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.10.0",
+    "express": "^5.1.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "recharts": "^3.2.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.0",
+    "vite": "^7.1.12"
+  }
+}
