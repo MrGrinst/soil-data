@@ -6,6 +6,7 @@ ENV_DIR="/etc/soil-data"
 DATA_DIR="/var/lib/soil-data"
 SERVICE_PATH="/etc/systemd/system/soil-data.service"
 PNPM_VERSION="10.19.0"
+DEFAULT_REPO_ARCHIVE_URL="https://github.com/MrGrinst/soil-data/archive/refs/heads/main.tar.gz"
 
 require_root() {
   if [[ "${EUID}" -ne 0 ]]; then
@@ -141,7 +142,7 @@ main() {
   local sensor_path
   local poll_interval_ms
 
-  repo_archive_url="$(prompt "GitHub repo archive URL" "")"
+  repo_archive_url="$(prompt "GitHub repo archive URL" "${DEFAULT_REPO_ARCHIVE_URL}")"
   ctid="$(prompt "LXC container ID" "210")"
   hostname="$(prompt "Container hostname" "soil-data")"
   bridge="$(prompt "Network bridge" "vmbr0")"

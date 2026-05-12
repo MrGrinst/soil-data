@@ -26,7 +26,6 @@ The backend serves API routes on `http://localhost:3000`. The production build i
 
 The installer is designed to be run as a standalone script from a public GitHub raw URL. It will prompt for:
 
-- the GitHub repo archive URL
 - Proxmox container settings
 - Ecowitt application key
 - Ecowitt API key
@@ -36,11 +35,5 @@ The installer is designed to be run as a standalone script from a public GitHub 
 Typical usage from the Proxmox host:
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/your-org/your-repo/main/deploy/proxmox/install-lxc.sh)
-```
-
-When prompted for the archive URL, provide the repo tarball URL, for example:
-
-```text
-https://github.com/your-org/your-repo/archive/refs/heads/main.tar.gz
+bash <(curl -fsSL https://raw.githubusercontent.com/MrGrinst/soil-data/main/deploy/proxmox/install-lxc.sh)
 ```
