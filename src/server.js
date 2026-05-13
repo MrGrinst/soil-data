@@ -45,7 +45,7 @@ app.get("/api/health", (_request, response) => {
 
 if (fs.existsSync(clientDistDir)) {
   app.use(express.static(clientDistDir));
-  app.get("*", (_request, response) => {
+  app.get("/{*path}", (_request, response) => {
     response.sendFile(path.join(clientDistDir, "index.html"));
   });
 } else {
