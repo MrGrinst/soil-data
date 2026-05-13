@@ -46,7 +46,7 @@ prompt_secret() {
 
   while [[ -z "${input}" ]]; do
     read -r -s -p "${label}: " input
-    printf '\n'
+    printf '\n' >&2
   done
 
   printf '%s' "${input}"
@@ -190,7 +190,7 @@ main() {
 
   local work_dir
   work_dir="$(mktemp -d)"
-  trap 'rm -rf "${work_dir}"' EXIT
+  trap "rm -rf '${work_dir}'" EXIT
 
   echo "Downloading application source archive..."
   curl -fsSL "${repo_archive_url}" -o "${work_dir}/soil-data.tar.gz"
